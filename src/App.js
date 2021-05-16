@@ -21,7 +21,9 @@ function App() {
           <Calendar value={value} onChange={setValue} active={modalActive} setActive={setModalActive} />
          
       </main>
-      <AddEvent active={modalActive} setActive={setModalActive} value={value} />
+      <AddEvent active={modalActive} setActive={setModalActive} value={value}>
+        <p>Oj mama chto</p>
+      </AddEvent>
       
     </div>
   );

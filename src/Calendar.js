@@ -34,7 +34,7 @@ const Calendar = ({value, onChange, active, setActive}) => {
     const nextMonth = () => value.clone().add(1, "month");
     const thisMonth = () => value.isSame(new Date(), "month");
     const arrowLeft = <FontAwesomeIcon icon={faAngleDoubleLeft} />;
-    
+
     return (
         <Container className="calendar p-0 justify-content-md-center">
             <Row className="header p-0 m-0 rounded-top">
@@ -58,7 +58,7 @@ const Calendar = ({value, onChange, active, setActive}) => {
                         {week.map(day => (
                             <div className="day"
                             onClick={()=> !beforeToday(day) && onChange(day)}>
-                                <div className={dayStyles(day)} onDoubleClick={()=>AddEvent(active, setActive(true))}>{day.format("D").toString()}</div>
+                                <div className={dayStyles(day)} onDoubleClick={()=>AddEvent(active, setActive(true), value)}>{day.format("D").toString()}</div>
                             </div>
                         ))}
                     </div>

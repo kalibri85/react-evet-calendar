@@ -1,15 +1,18 @@
-const AddEvent = ({active, setActive}) => {
-  
+import moment from "moment";
 
-    //console.log(day.getDate());
-    //const bd = new Date(day);
+const AddEvent = ({active, setActive, value, children}) => {
 
-    return ( <div className={active ? "addEvent active" : "addEvent"} onClick={() => setActive(false)}>
-        <div className="modalContent" onClick={e => e.stopPropagation()}>
+    return ( 
+    <div className={active ? "addEvent active" : "addEvent"} onClick={() => setActive(false)}>
+        <div className={active ? "modalContent active" : "modalContent"} onClick={e => e.stopPropagation()}>
+            <div className="headerModal">
+                {moment(value).format("YYYY MMM D")}
+            </div>
             Hello,
+            {children}
         </div>
     
-</div> );
+    </div> );
 
 }
  

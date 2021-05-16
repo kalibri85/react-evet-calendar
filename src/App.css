@@ -137,15 +137,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
   }
 
   .addEvent.active {
-    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .headerModal {
+    height: 25px;
+    width: 100%;
+    background-color: var(--light-blue);
+    padding: 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
   }
   
   .modalContent {
-    padding: 20px;
     border-radius: 12px;
     background-color: white;
+    width:80vw;
+    transform: scale(0.5);
+    transition: 0.4s all;
+  }
+
+  .modalContent.active {
+    transform: scale(1);
   }
