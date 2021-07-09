@@ -148,27 +148,63 @@
   }
 
   .headerModal {
-    height: 25px;
     width: 100%;
     background-color: var(--light-blue);
-    padding: 20px;
+    color: var(--white);
+    padding: 10px;
+    position: relative;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 19px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .headerModal .closeB {
+    position: absolute;
+    top: -4px;
+    font-size: 26px;
+    right: -5px;
+    color: var(--black);
+    cursor: pointer;
   }
   
   .modalContent {
     border-radius: 12px;
     background-color: white;
-    width:80vw;
     transform: scale(0.5);
     transition: 0.4s all;
+    width: 80vw;
+    text-align: center;
+  }
+
+  .modalContent form {
+    padding-bottom: 25px;
+  }
+
+  .align-self-end {
+    text-align: right;
   }
 
   .modalContent.active {
     transform: scale(1);
+  }
+
+  .rowH:last-of-type {
+    min-height: 38px;
+    margin-bottom: 10px;
+  }
+
+  .timeCol, .eventCol {
+    background-color: var(--grey);
+    color: var(--black);
+    line-height: 38px;
+  }
+  .eventCol {
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 19px;
   }

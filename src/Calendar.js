@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import AddEvent from "./AddEvent";
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -8,6 +7,7 @@ import { Container, Row, Col  } from 'reactstrap';
 
 
 import Build from "./Build";
+import ModalWindow from "./ModalWindow";
 
 const Calendar = ({value, onChange, active, setActive}) => {
     const [calendar, setCalendar] = useState([]);
@@ -58,7 +58,7 @@ const Calendar = ({value, onChange, active, setActive}) => {
                         {week.map(day => (
                             <div className="day"
                             onClick={()=> !beforeToday(day) && onChange(day)}>
-                                <div className={dayStyles(day)} onDoubleClick={()=>AddEvent(active, setActive(true), value)}>{day.format("D").toString()}</div>
+                                <div className={dayStyles(day)} onDoubleClick={()=>ModalWindow(active, setActive(true), value)}>{day.format("D").toString()}</div>
                             </div>
                         ))}
                     </div>
